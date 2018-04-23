@@ -1,0 +1,6 @@
+@Html.DevExpress().GridView(
+    settings => {
+        settings.Name = "resourceInfo";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "ResourceInfoPartial" };
+        settings.KeyFieldName = "ID";
+    }).Bind(Model).GetHtml()
