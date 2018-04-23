@@ -1,0 +1,47 @@
+﻿@model Scheduler.PopupMenuShowing.Models.SchedulerDataObject
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+function OnMenuClick(s,e) {
+        if(e.item.GetItemCount() > 0)
+            return;
+        if(e.item.name == "ShowResources")
+            ShowResourcesInfo();
+        else
+            scheduler.RaiseCallback("MNUVIEW|" + e.item.name);
+    }
+    function ShowResourcesInfo() {
+        $.ajax({
+            type: "POST",
+            url: "@(Url.Action("ResourceInfoPartial", "Home"))",
+            success: function(response) {
+                $("#content").html(response);
+                $("#goto").show();
+            }
+        })
+    }
+    function OnSchedulerShown(){
+        $("#goto").hide();
+    }
+</script>
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about DevExpress Extensions for ASP.NET MVC visit <a href="http://devexpress.com/Products/NET/Controls/ASP-NET-MVC/" title="ASP.NET MVC Website">http://devexpress.com/Products/NET/Controls/ASP-NET-MVC/</a>.
+</p>
+
+<div id="content">
+    @Html.Partial("SchedulerPartial", Model)
+</div>
+<div id="goto" style="display:none;">
+@Ajax.ActionLink("Go to schedule", "SchedulerPartial", "Home", 
+    new AjaxOptions(){
+        HttpMethod = "POST",
+        UpdateTargetId = "content",
+        OnSuccess = "OnSchedulerShown"
+    }
+)
+</div>
