@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CarsDB">
+  <DataContextMoniker Name="/CarsDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="da7f5494-ba56-4cec-905f-b622536c06fc" absoluteBounds="5.125, 1.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/CarsDBDataContext/Car" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b94e7a2-8b49-4174-811c-caa5321e962d" absoluteBounds="5.14, 2.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f41d7f2-e20e-4cf1-a74b-5f3cec16feba" absoluteBounds="7.625, 1.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/CarsDBDataContext/CarScheduling" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a162c71d-ce92-49de-b1c7-799a8a8e77cb" absoluteBounds="7.6400000000000006, 2.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

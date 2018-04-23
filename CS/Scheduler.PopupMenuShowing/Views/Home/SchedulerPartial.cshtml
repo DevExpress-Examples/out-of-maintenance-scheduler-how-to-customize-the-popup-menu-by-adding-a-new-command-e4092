@@ -1,0 +1,26 @@
+@using Scheduler.PopupMenuShowing.Models
+
+@Html.DevExpress().Scheduler(
+    settings =>
+    {
+        settings.Name = "scheduler";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
+        settings.Width = 800;
+        settings.Start = new DateTime(2010, 7, 13);
+
+        settings.Storage.EnableReminders = false;
+        settings.Storage.Appointments.Assign(SchedulerHelper.AppointmentStorage);
+        settings.Storage.Resources.Assign(SchedulerHelper.ResourceStorage);
+
+        settings.OptionsCustomization.AllowAppointmentCreate = UsedAppointmentType.None;
+        settings.OptionsCustomization.AllowAppointmentEdit = UsedAppointmentType.None;
+        settings.OptionsCustomization.AllowAppointmentDelete = UsedAppointmentType.None;
+        settings.PopupMenuShowing = (sender, e) =>
+        {
+            if (!e.Menu.Id.Equals(SchedulerMenuItemId.DefaultMenu))
+                return;
+            var item = new MenuItem("Show Resources", "ShowResources");
+            e.Menu.Items.Insert(0, item);
+            e.Menu.ClientSideEvents.ItemClick = "OnMenuClick";
+        };
+    }).Bind(Model.Appointments, Model.Resources).GetHtml()
