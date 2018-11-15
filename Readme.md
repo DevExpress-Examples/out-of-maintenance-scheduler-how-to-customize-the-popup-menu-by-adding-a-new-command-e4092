@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [SchedulerPartial.cshtml](./CS/Scheduler.PopupMenuShowing/Views/Home/SchedulerPartial.cshtml)
+<!-- default file list end -->
 # Scheduler - How to customize the popup menu by adding a new command
 
 
