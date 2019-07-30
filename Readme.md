@@ -5,7 +5,7 @@
 <!-- default file list end -->
 # Scheduler - How to customize the popup menu by adding a new command
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4092)**
+**[[Run Online]](https://codecentral.devexpress.com/e4092/)**
 <!-- run online end -->
 
 
